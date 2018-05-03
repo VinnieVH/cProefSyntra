@@ -1,6 +1,6 @@
 # cProefSyntra
 
-* TODO:
+* FRONT END TODO:
 * Make app directory ✓
 * add npms required for project ✓
 * add partials for header and footer ✓
