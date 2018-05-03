@@ -5,8 +5,15 @@ var bodyParser  = require("body-parser"),
 
 mongoose.connect("mongodb://localhost/cProefSyntra");
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res){
-   res.send("homepage"); 
+   res.render("landing"); 
+});
+
+app.get("/homepage", function(req, res){
+   res.render("homepage"); 
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
