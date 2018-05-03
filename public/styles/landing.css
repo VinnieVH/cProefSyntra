@@ -2,6 +2,10 @@ body {
   background-color: #000;
 }
 
+#landing-header #landing-h1 {
+  color: #644cad;
+}
+
 #landing-header {
   z-index: 1;
   position: relative;
@@ -15,6 +19,7 @@ body {
 }
 
 .button {
+  color: #644cad;
   text-decoration: none;
   font-size: 18px;
   letter-spacing: 2px;
@@ -31,7 +36,13 @@ body {
   z-index: 2;
 }
 
+.button:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .button:before {
+  text-decoration: none;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   position: absolute;
@@ -46,6 +57,7 @@ body {
 }
 
 .button:hover:before {
+  text-decoration: none;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   left: 0;
@@ -54,6 +66,7 @@ body {
 }
 
 .button:focus:before {
+  text-decoration: none;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   left: 0;

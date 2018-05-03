@@ -11,6 +11,7 @@
 * include Bootstrap CDN ✓
 * add homepage ✓
 * add route to the homepage ✓
+* styling landing page -halfway-
 * add & style navbar 
 * write models for the project
 * add view file for homepage
