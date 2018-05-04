@@ -1,6 +1,6 @@
 # cProefSyntra
 
-* FRONT END TODO:
+TODO:
 * Make app directory ✓
 * add npms required for project ✓
 * add partials for header and footer ✓
@@ -11,8 +11,8 @@
 * include Bootstrap CDN ✓
 * add homepage ✓
 * add route to the homepage ✓
-* styling landing page -halfway-
-* add & style navbar 
+* styling landing page ✓
+* add & style navbar - needs more work
 * write models for the project
 * add view file for homepage
 * setup the app routes
