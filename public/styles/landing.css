@@ -1,10 +1,12 @@
 body {
   background-color: rgb(232, 234, 237);
+  font-family: 'Poppins';
 }
 
 #landing-header #landing-h1 {
   color: #040405;
   text-shadow: 2px 3px 12px rgba(150, 150, 150, 1);
+  text-transform: uppercase;
 }
 
 #landing-header {

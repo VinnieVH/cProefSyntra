@@ -12,7 +12,8 @@ TODO:
 * add homepage ✓
 * add route to the homepage ✓
 * styling landing page ✓
-* add & style navbar - needs more work
+* add & style navbar ✓
+* add & style footer
 * write models for the project
 * add view file for homepage
 * setup the app routes

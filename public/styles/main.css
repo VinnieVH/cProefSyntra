@@ -1,0 +1,42 @@
+body {
+    height: 100%;
+    font-family: 'Poppins';
+    background-color: rgb(232, 234, 237); 
+    min-height: 100%;
+}
+
+i {
+    color: rgb(232, 234, 237);
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+footer {
+    position:fixed;
+    bottom:0;
+}
+
+.navbar-color {
+    background: #040405;
+    border: 1px solid #353a42;
+    border-radius: 0%;
+    text-align: center;
+}
+
+.input-size {
+    width: 150px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(232, 234, 237);
+}
+
+.navbar-default .navbar-brand {
+    color: rgb(232, 234, 237);
+}
