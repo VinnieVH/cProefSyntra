@@ -3,6 +3,10 @@ body {
   font-family: 'Poppins';
 }
 
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+}
+
 #landing-header #landing-h1 {
   color: #040405;
   text-shadow: 2px 3px 12px rgba(150, 150, 150, 1);

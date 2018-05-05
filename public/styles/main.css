@@ -20,6 +20,13 @@ hr {
 footer {
     position:fixed;
     bottom:0;
+    width: 100%;
+    background-color: #040405;
+    color: rgb(232, 234, 237);
+}
+
+footer>h1 {
+    text-align: center;
 }
 
 .navbar-color {
