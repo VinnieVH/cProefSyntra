@@ -14,6 +14,6 @@ TODO:
 * styling landing page ✓
 * add & style navbar ✓
 * add & style footer - halfway there
-* add favicon to header
+* add favicon to header ✓
 * write models for the project
 * setup the app routes
