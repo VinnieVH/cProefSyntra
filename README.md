@@ -13,7 +13,8 @@ TODO:
 * add route to the homepage ✓
 * styling landing page ✓
 * add & style navbar ✓
-* add & style footer - halfway there
+* add & style footer ✓
 * add favicon to header ✓
+* hardcode the entire homepage in - halfway
 * write models for the project
 * setup the app routes
