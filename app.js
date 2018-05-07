@@ -3,7 +3,7 @@ var bodyParser  = require("body-parser"),
     express     = require("express"),
     app         = express();
 
-mongoose.connect("mongodb://localhost/cProefSyntra");
+// mongoose.connect("mongodb://localhost/cProefSyntra");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
