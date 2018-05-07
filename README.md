@@ -15,6 +15,8 @@ TODO:
 * add & style navbar ✓
 * add & style footer ✓
 * add favicon to header ✓
+* add hover effect to the navbar ✓
+* style container for items :/
 * hardcode the entire homepage in - halfway
 * write models for the project
 * setup the app routes
