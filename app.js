@@ -8,7 +8,8 @@ var bodyParser      = require("body-parser"),
     app             = express();
 
 // Requiring MODELS
-var User = require("./database_models/user");
+var User    = require("./database_models/user"),
+    Product = require("./database_models/product");
 
 mongoose.connect(process.env.DATABASEURL);
 

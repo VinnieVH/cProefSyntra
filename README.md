@@ -25,4 +25,6 @@ TODO:
 * add login logic ✓
 * add logout route ✓
 * add logout logic ✓
-* setup the app routes
+* write product model
+* seed DB with some information to test
+* add product show route
