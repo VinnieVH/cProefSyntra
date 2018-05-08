@@ -16,7 +16,13 @@ TODO:
 * add & style footer ✓
 * add favicon to header ✓
 * add hover effect to the navbar ✓
-* style container for items :/
-* hardcode the entire homepage in - halfway
-* write models for the project
+* style container for items ✓
+* hardcode the entire homepage in ✓
+* write user model ✓
+* add register route ✓
+* add register logic ✓
+* add login route ✓
+* add login logic ✓
+* add logout route ✓
+* add logout logic ✓
 * setup the app routes

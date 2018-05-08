@@ -25,17 +25,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/home">
             <img alt="Brand" src="/logo/logo_eindwerk.png">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li class="hvr-underline-from-center"><a href="#">Sign Up</a></li>
-            <li class="hvr-underline-from-center"><a href="#">Login</a></li>
+            <%if(!currentUser) {%>
+            <li class="hvr-underline-from-center"><a href="/register">Sign Up</a></li>
+            <li class="hvr-underline-from-center"><a href="/login">Login</a></li>
+            <% } else { %>
+            <li class="hvr-underline-from-center"><a href="#">Signed In As <%=currentUser.username%></a></li>
             <li class="hvr-underline-from-center"><a href="#"><i class="fas fa-shopping-bag"></i><span>Shopping Bag</span></a></li>
             <li class="hvr-underline-from-center"><a href="#"><i class="far fa-heart"></i><span>Wishlist</span></a></li>
-            <li class="hvr-underline-from-center"><a href="#">Logout</a></li>
+            <li class="hvr-underline-from-center"><a href="/logout">Logout</a></li>
+            <% } %>
             <li>
               <form id="searchBox" class="navbar-form navbar-right">
                 <div class="form-group">
