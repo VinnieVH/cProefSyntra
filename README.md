@@ -16,7 +16,7 @@ TODO:
 * add & style footer ✓
 * add favicon to header ✓
 * add hover effect to the navbar ✓
-* style container for items ✓
+* style container for items ==> DEF NEEDS MORE WORK BUGS WHEN LOADING FROM DATABASE
 * hardcode the entire homepage in ✓
 * write user model ✓
 * add register route ✓
@@ -25,6 +25,6 @@ TODO:
 * add login logic ✓
 * add logout route ✓
 * add logout logic ✓
-* write product model
-* seed DB with some information to test
+* write product model ✓
+* seed DB with some information to test ✓
 * add product show route

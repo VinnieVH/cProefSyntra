@@ -54,7 +54,7 @@ a, a:hover, a:active, a:visited, a:focus {
 
 .button:hover {
   text-decoration: none;
-  color: white;
+  color: rgb(232, 234, 237);
 }
 
 .button:before {

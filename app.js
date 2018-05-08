@@ -9,13 +9,16 @@ var bodyParser      = require("body-parser"),
 
 // Requiring MODELS
 var User    = require("./database_models/user"),
-    Product = require("./database_models/product");
+    Product = require("./database_models/product"),
+    seedDB  = require("./seed");
 
 mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+// seed the database
+seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session") ({
@@ -36,11 +39,18 @@ app.use(function(req, res, next){
 });
 
 app.get("/", function(req, res){
-   res.render("landing"); 
+    res.render("landing");
 });
 
+
 app.get("/home", function(req, res){
-   res.render("home"); 
+      Product.find({}, function(err, allProducts){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("home",{products:allProducts});
+       }
+    });
 });
 
 // =====================
