@@ -27,4 +27,9 @@ TODO:
 * add logout logic ✓
 * write product model ✓
 * seed DB with some information to test ✓
+* restyle shoppingbag & wishlist in the navbar ✓
+* fix hover bug in the navbar ✓
+* style login / register page - semi
+* setup passport correctly so it uses email to login
+* make directory for different routes
 * add product show route

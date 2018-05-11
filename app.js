@@ -67,13 +67,26 @@ app.post("/register", function(req, res) {
     var newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function(err, user) {
         if(err){
+            console.log(err);
             return res.redirect("/register");
-        }
-        passport.authenticate("local")(req, res, function() {
-           res.redirect("/home"); 
-        });
-    })
-});
+        } else {
+            // var username = req.body.username;
+            // var lastName = req.body.lastName;
+            // var email = req.body.email;
+    
+            // var newUser = {username: username, lastName: lastName, email: email}
+            // // Create a new User and save to DB
+            // User.create(newUser, function(err, newlyCreated){
+            //     if(err){
+            //         console.log(err);
+            //     } else {
+                    //redirect back to the home page after login the user in
+           passport.authenticate("local")(req, res, function() {
+            res.redirect("/home"); 
+           });
+        }      
+    });       
+});    
 
 // Show login form
 app.get("/login", function(req, res) {

@@ -4,7 +4,7 @@ var Product = require("./database_models/product");
  
 var data = [
     {
-          name: "Polo",
+          category: "Polo",
           brand: "Ralph Lauren",
           image: "https://mosaic01.ztat.net/vgs/media/pdp-zoom/RC/72/4D/00/7C/11/RC724D007-C11@24.jpg",
           price: "€39,95",
@@ -12,7 +12,7 @@ var data = [
           sizes: "XS, S, M, L, XL, XXL"
     },
     {
-          name: "Sneakers",
+          category: "Sneakers",
           brand: "Ralph Lauren",
           image: "https://mosaic02.ztat.net/vgs/media/pdp-zoom/PO/21/2B/01/XQ/11/PO212B01X-Q11@9.jpg",
           price: "€79,95",
@@ -20,7 +20,7 @@ var data = [
           sizes: ""
     },
     {
-          name: "T-shirt",
+          category: "T-shirt",
           brand: "Ralph Lauren",
           image: "https://mosaic02.ztat.net/vgs/media/pdp-zoom/PO/22/4G/05/FA/11/PO224G05F-A11@14.jpg",
           price: "€24,95",
