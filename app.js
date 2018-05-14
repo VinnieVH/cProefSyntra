@@ -11,13 +11,15 @@ var bodyParser      = require("body-parser"),
 var User    = require("./database_models/user"),
     Product = require("./database_models/product"),
     seedDB  = require("./seed");
-
+    
+// Connection string to the DB
 mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-// seed the database
+
+// seed the database with some testing data
 seedDB();
 
 // PASSPORT CONFIGURATION

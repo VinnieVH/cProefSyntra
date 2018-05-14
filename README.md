@@ -16,7 +16,7 @@ TODO:
 * add & style footer ✓
 * add favicon to header ✓
 * add hover effect to the navbar ✓
-* style container for items ==> DEF NEEDS MORE WORK BUGS WHEN LOADING FROM DATABASE
+* style container for items ✓
 * hardcode the entire homepage in ✓
 * write user model ✓
 * add register route ✓
@@ -29,6 +29,7 @@ TODO:
 * seed DB with some information to test ✓
 * restyle shoppingbag & wishlist in the navbar ✓
 * fix hover bug in the navbar ✓
+* make navbar follow when scrolling ✓
 * style login / register page - semi
 * setup passport correctly so it uses email to login
 * make directory for different routes
