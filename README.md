@@ -30,7 +30,10 @@ TODO:
 * restyle shoppingbag & wishlist in the navbar ✓
 * fix hover bug in the navbar ✓
 * make navbar follow when scrolling ✓
-* style login / register page - semi
+* make sure images load in same format ✓
+* style login / register page ✓
+* style navbar category items ✓
+* add flags for different languages ✓
 * setup passport correctly so it uses email to login
 * make directory for different routes
 * add product show route
