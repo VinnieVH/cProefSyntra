@@ -34,6 +34,9 @@ TODO:
 * style login / register page ✓
 * style navbar category items ✓
 * add flags for different languages ✓
-* setup passport correctly so it uses email to login
+* setup passport login strategy all over again
+* add show page for products
+* add show route
+* add account detail page
+* add account details route
 * make directory for different routes
-* add product show route
