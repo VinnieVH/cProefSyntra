@@ -5,6 +5,7 @@ body {
 
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
+    color: #040405;
 }
 
 #landing-header #landing-h1 {
