@@ -36,6 +36,7 @@ WEBSITE TO-DO-LIST:
 * style login / register page ✓
 * style navbar category items ✓
 * add flags for different languages ✓
+* push footer down so button doesn't overlap (register page)
 * setup passport login strategy all over again
 * add show page for products
 * add show route

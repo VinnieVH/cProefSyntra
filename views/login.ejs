@@ -1,21 +1,22 @@
 <% include ../partials/header %>
-
-<div class="login-page container">
-    <h1 id="h1-register">Welcome</h1>
-    <div class="login-form">
-        <h2>I already have an account</h2>
-        <form action="/login" method="POST">
-            <label for="username">First name</label>
-            <input id="username" type="text" name="username">
-            <label for="email">Email</label>
-            <input id="email" type="text" name="email" disabled>
-            <label for="password">Password</label>
-            <input id="password" type="password" name="password">
-            <div class="button-group">
-                <button class="button">Login</button>
-            </div>
-        </form>  
+<main class="login-register">
+    <div class="login-page container">
+        <h1 id="h1-register">Welcome</h1>
+        <div class="login-form">
+            <h2>I already have an account</h2>
+            <form action="/login" method="POST">
+                <label for="username">First name</label>
+                <input id="username" type="text" name="username">
+                <label for="email">Email</label>
+                <input id="email" type="text" name="email" disabled>
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+                <div class="button-group">
+                    <button class="button">Login</button>
+                </div>
+            </form>  
+        </div>
     </div>
-</div>
+</main>
 
 <% include ../partials/footer %>
