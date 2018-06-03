@@ -2,7 +2,6 @@
 
 WEBSITE TO-DO-LIST: 
 
-
 * Make app directory ✓
 * add npms required for project ✓
 * add partials for header and footer ✓
