@@ -6,10 +6,10 @@
             <div class="col-xs-12 col-sm-6">
                 <h2>I already have an account</h2>
                 <form action="/login" method="POST">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" name="email">
-                    <label for="password">Password</label>
-                    <input id="password" type="password" name="password">
+                    <label for="loginEmail">Email</label>
+                    <input id="loginEmail" type="text" name="email">
+                    <label for="loginPassword">Password</label>
+                    <input id="loginPassword" type="password" name="password">
                     <div class="button-group">
                         <button class="button">Login</button>
                     </div>
@@ -17,6 +17,12 @@
             </div>
             <div class="col-xs-12 col-sm-6">
                 <h2>I am a new customer</h2>
+                <% if(errors){ %>
+                  <% errors.forEach(function() { %>
+                  <% console.log(msg); %>
+                        <div class="alert alert-danger"></div>
+                   <% }); %>
+                <% }; %>
                 <form action="/register" method="POST">
                     <label for="firstName">First name</label>
                     <input id="firstName" type="text" name="firstName">

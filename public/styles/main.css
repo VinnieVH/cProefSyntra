@@ -44,7 +44,7 @@ i {
     color: rgb(232, 234, 237);
     text-decoration: none;
     padding-left: 10px;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 footer {
@@ -262,6 +262,14 @@ form>label {
     z-index: 1;
 }
 
+.nav-wishlist {
+    color: #e58d12;
+}
+
+.nav-shoppingbag {
+    color: #e58d12;
+}
+
 .input-size {
     width: 150px;
 }
@@ -282,6 +290,7 @@ form>label {
 
 li>a.li-a-navbar {
     padding: 4px 15px;
+    margin-right: 65px;
 }
 
 .navbar-default .navbar-nav>li>a>span {
@@ -349,7 +358,7 @@ li>a.li-a-navbar {
 }
 
 .button:hover {
-     display: inline-block;
+    display: inline-block;
     vertical-align: middle;
     transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -366,7 +375,7 @@ li>a.li-a-navbar {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(73, 72, 68);
+  background: #e58d12;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;

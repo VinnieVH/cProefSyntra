@@ -1,19 +1,21 @@
-var bodyParser      = require("body-parser"),
-    mongoose        = require("mongoose"),
-    express         = require("express"),
-    flash           = require("connect-flash"),
-    passport        = require("passport"),
-    LocalStrategy   = require("passport-local"),
-    methodOverride  = require("method-override"),
-    app             = express();
+const bodyParser     = require("body-parser"),
+    mongoose         = require("mongoose"),
+    express          = require("express"),
+    session          = require("express-session"),
+    expressValidator = require("express-validator"), 
+    flash            = require("connect-flash"),
+    passport         = require("passport"),
+    LocalStrategy    = require("passport-local").Strategy,
+    methodOverride   = require("method-override"),
+    app              = express();
 
 // Requiring MODELS
-var User    = require("./database_models/user"),
+const User    = require("./database_models/user"),
     Product = require("./database_models/product"),
     seedDB  = require("./seed");
     
 // Connection string to the DB
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect("mongodb://localhost/cProef_Syntra" || process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -22,23 +24,47 @@ app.use(express.static(__dirname + "/public"));
 // seed the database with some testing data
 seedDB();
 
-// PASSPORT CONFIGURATION
-app.use(require("express-session") ({
+// Express Session
+app.use(session ({
     secret: "Lmao dank memes Xd",
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }));
+
+// Passport init
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
-// MIDDLEWARE for all paths: make sure we can access the user info in every single path before rendering
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
+// Express Validator
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
+
+
+// Connect Flash
+app.use(flash());
+
+// Global Variables for flash
+app.use(function (req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
     next();
-});
+  });
 
 app.get("/", function(req, res){
     res.render("landing");
@@ -66,28 +92,27 @@ app.get("/register", function(req, res) {
 
 // Handle signup logic
 app.post("/register", function(req, res) {
-    var newUser = new User({username: req.body.username});
-    User.register(newUser, req.body.password, function(err, user) {
-        if(err){
-            console.log(err);
-            return res.redirect("/register");
-        } else {
-            // var username = req.body.username;
-            // var lastName = req.body.lastName;
-            // var email = req.body.email;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var email = req.body.email;
+    var password = req.body.password;
+
+    // Validation
+    req.checkBody('firstName', 'First Name is required').notEmpty();
+    req.checkBody('lastName', 'Last Name is required').notEmpty();
+	req.checkBody('email', 'Email is required').notEmpty();
+	req.checkBody('email', 'Email is not valid').isEmail();
+	req.checkBody('password', 'Password is required').notEmpty();
+
+    var errors = req.validationErrors();
     
-            // var newUser = {username: username, lastName: lastName, email: email}
-            // // Create a new User and save to DB
-            // User.create(newUser, function(err, newlyCreated){
-            //     if(err){
-            //         console.log(err);
-            //     } else {
-                    //redirect back to the home page after login the user in
-           passport.authenticate("local")(req, res, function() {
-            res.redirect("/home"); 
-           });
-        }      
-    });       
+    if(errors){
+        res.render("register", {
+            errors: errors
+        });
+    } else {
+        console.log("PASSED!");
+    }
 });    
 
 // Show login form
@@ -109,6 +134,9 @@ app.get("/logout", function(req, res) {
    res.redirect("/home");
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("cProef server started.");
+// Setup port 
+app.set('port', (process.env.PORT || 3000));
+
+app.listen(app.get('port'), function(){
+	console.log('Server started on port '+app.get('port'));
 });

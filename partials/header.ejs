@@ -36,31 +36,30 @@
         </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <%if(!currentUser) {%>
             <li class="hvr-underline-from-center"><a href="/register">Sign Up</a></li>
             <li class="hvr-underline-from-center"><a href="/login">Login</a></li>
-            <% } else { %>
-            <li class="hvr-underline-from-center"><a href="#">Signed In As <%=currentUser.firstName%></a></li>
-            <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="fas fa-shopping-bag"></i><span>Shopping Bag</span></a></li>
-            <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="far fa-heart"></i><span>Wishlist</span></a></li>
+            <li class="hvr-underline-from-center"><a href="#">Signed In As</a></li>
             <li class="hvr-underline-from-center"><a href="/logout">Logout</a></li>
-            <% } %>
           </ul>
         </div>
       </div>
       </div>
     </nav>
-      <nav class="category-bar navbar navbar-default">
-        <div class="container">
-          <ul class="nav navbar-nav navbar-left">
-            <li class="category-item hvr-underline-from-center"><a href="/register">Jackets</a></li>
-            <li class="category-item hvr-underline-from-center"><a href="/login">Shirts</a></li>
-            <li class="category-item hvr-underline-from-center"><a href="#">Sweaters</a></li>
-            <li class="category-item hvr-underline-from-center"><a href="#">T-shirts</a></li>
-            <li class="category-item hvr-underline-from-center"><a href="#">Trousers</a></li>
-            <li class="category-item hvr-underline-from-center"><a href="#">Shoes</a></li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="category-bar navbar navbar-default">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="category-item hvr-underline-from-center"><a href="/register">Jackets</a></li>
+          <li class="category-item hvr-underline-from-center"><a href="/login">Shirts</a></li>
+          <li class="category-item hvr-underline-from-center"><a href="#">Sweaters</a></li>
+          <li class="category-item hvr-underline-from-center"><a href="#">T-shirts</a></li>
+          <li class="category-item hvr-underline-from-center"><a href="#">Trousers</a></li>
+          <li class="category-item hvr-underline-from-center"><a href="#">Shoes</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="nav-shoppingbag fas fa-shopping-bag"></i><span>Shopping Bag</span></a></li>
+          <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="nav-wishlist far fa-heart"></i><span>Wishlist</span></a></li>
+        </ul>
+      </div>
+    </nav>
 
        
