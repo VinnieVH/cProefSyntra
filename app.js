@@ -15,7 +15,7 @@ const User    = require("./database_models/user"),
     seedDB  = require("./seed");
     
 // Connection string to the DB
-mongoose.connect("mongodb://localhost/cProef_Syntra" || process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/cProef_Syntra");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
