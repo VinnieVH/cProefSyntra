@@ -8,8 +8,8 @@ var bodyParser      = require("body-parser"),
     app             = express();
 
 // Requiring MODELS
-var User    = require("./database_models/user"),
-    Product = require("./database_models/product"),
+var User    = require("./models/user"),
+    Product = require("./models/product"),
     seedDB  = require("./seed");
     
 // Connection string to the DB
