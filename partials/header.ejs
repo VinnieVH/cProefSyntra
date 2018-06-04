@@ -61,11 +61,23 @@
         </ul>
         <% if(user){ %>
         <ul class="nav navbar-nav navbar-right">
-          <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="nav-shoppingbag fas fa-shopping-bag"></i><span>Shopping Bag</span></a></li>
-          <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="nav-wishlist far fa-heart"></i><span>Wishlist</span></a></li>
+          <li><a href="#" class="li-a-navbar hvr-underline-from-center"><i class="nav-shoppingbag fas fa-shopping-bag"></i><span>Shopping Bag</span></a></li>
+          <li class="padding-wishlist"><a href="#" class="li-a-navbar hvr-underline-from-center"><i class="nav-wishlist far fa-heart"></i><span>Wishlist</span></a></li>
         </ul>
         <% } %>
       </div>
     </nav>
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+          <div class="alert alert-danger" role="alert">
+            <%=error%>
+          </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+          <div class="alert alert-success" role="alert">
+            <%=success%>
+          </div>
+        <% } %>
+      </div>
 
        

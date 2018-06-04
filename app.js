@@ -59,9 +59,8 @@ app.use(flash());
 
 // Global Variables for flash
 app.use(function (req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     res.locals.user = req.user || null;
     next();
   });
@@ -84,6 +83,39 @@ app.get("/home", function(req, res){
 // =====================
 // AUTHENTICATION ROUTES
 // =====================
+
+// Passport strategy
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'},
+    function(email, password, done) {
+        User.getUserByEmail(email, function(err, user) {
+            if(err) throw err;
+            if(!user){
+                return done(null, false, {message: "Unknown User"});
+            }
+
+            User.comparePassword(password, user.password, function(err, isMatch){
+                if(err) throw err;
+                if(isMatch){
+                    return done(null, user);
+                }
+                else {
+                    return done(null, false, {message: "Invalid Password"});
+                }
+            });
+        })
+    }));
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+    });
+    
+passport.deserializeUser(function(id, done) {
+User.getUserById(id, function(err, user) {
+    done(err, user);
+});
+});
 
 // ROOT ROUTE
 app.get("/register", function(req, res) {
@@ -123,47 +155,14 @@ app.post("/register", function(req, res) {
             console.log(user);
         });
 
-        req.flash('succes_msg', 'You are registered and can now login');
-        res.redirect("home");
+        req.flash('success', 'You are registered and can now login');
+        res.redirect("login");
     }
 }); 
 
 // Show login form
 app.get("/login", function(req, res) {
    res.render("login"); 
-});
-
-// Passport strategy
-passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'},
-    function(email, password, done) {
-        User.getUserByEmail(email, function(err, user) {
-            if(err) throw err;
-            if(!user){
-                return done(null, false, {message: "Unknown User"});
-            }
-
-            User.comparePassword(password, user.password, function(err, isMatch){
-                if(err) throw err;
-                if(isMatch){
-                    return done(null, user);
-                }
-                else {
-                    return done(null, false, {message: "Invalid Password"});
-                }
-            });
-        })
-    }));
-
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-    });
-    
-passport.deserializeUser(function(id, done) {
-User.getUserById(id, function(err, user) {
-    done(err, user);
-});
 });
 
 // Handle login  logic
