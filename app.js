@@ -11,8 +11,8 @@ const bodyParser     = require("body-parser"),
 
 // Requiring MODELS
 const User    = require("./database_models/user"),
-    Product = require("./database_models/product"),
-    seedDB  = require("./seed");
+    Product   = require("./database_models/product"),
+    seedDB    = require("./seed");
     
 // Connection string to the DB
 mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/cProef_Syntra");
@@ -108,30 +108,74 @@ app.post("/register", function(req, res) {
     
     if(errors){
         res.render("register", {
-            errors: errors
+            error: errors
         });
     } else {
-        console.log("PASSED!");
+        var newUser = new User({
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password
+        });
+        
+        User.createUser(newUser, function(err, user) {
+            if(err) throw err;
+            console.log(user);
+        });
+
+        req.flash('succes_msg', 'You are registered and can now login');
+        res.redirect("home");
     }
-});    
+}); 
 
 // Show login form
 app.get("/login", function(req, res) {
    res.render("login"); 
 });
 
-// Handle login form logic
-app.post("/login", passport.authenticate("local", 
-    {
-        successRedirect: "/home",
-        failureRedirect: "/login"
-    }), function(req, res){
+// Passport strategy
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'},
+    function(email, password, done) {
+        User.getUserByEmail(email, function(err, user) {
+            if(err) throw err;
+            if(!user){
+                return done(null, false, {message: "Unknown User"});
+            }
+
+            User.comparePassword(password, user.password, function(err, isMatch){
+                if(err) throw err;
+                if(isMatch){
+                    return done(null, user);
+                }
+                else {
+                    return done(null, false, {message: "Invalid Password"});
+                }
+            });
+        })
+    }));
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+    });
+    
+passport.deserializeUser(function(id, done) {
+User.getUserById(id, function(err, user) {
+    done(err, user);
+});
+});
+
+// Handle login  logic
+app.post("/login", passport.authenticate("local", {successRedirect: "home", failureRedirect: "login", failureFlash: true}),
+function(req, res){
+    res.redirect("home");
 });
 
 // Logout route
 app.get("/logout", function(req, res) {
    req.logout();
-   res.redirect("/home");
+   res.redirect("home");
 });
 
 // Setup port 

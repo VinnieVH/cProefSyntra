@@ -36,10 +36,14 @@
         </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            <% if(!user){ %>
             <li class="hvr-underline-from-center"><a href="/register">Sign Up</a></li>
             <li class="hvr-underline-from-center"><a href="/login">Login</a></li>
-            <li class="hvr-underline-from-center"><a href="#">Signed In As</a></li>
+            <% } %>
+            <% if(user) { %>
+            <li class="hvr-underline-from-center"><a href="#">Signed In As <%= user.firstName%></a></li>
             <li class="hvr-underline-from-center"><a href="/logout">Logout</a></li>
+            <% } %>
           </ul>
         </div>
       </div>
@@ -55,10 +59,12 @@
           <li class="category-item hvr-underline-from-center"><a href="#">Trousers</a></li>
           <li class="category-item hvr-underline-from-center"><a href="#">Shoes</a></li>
         </ul>
+        <% if(user){ %>
         <ul class="nav navbar-nav navbar-right">
           <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="nav-shoppingbag fas fa-shopping-bag"></i><span>Shopping Bag</span></a></li>
           <li class="hvr-underline-from-center"><a href="#" class="li-a-navbar"><i class="nav-wishlist far fa-heart"></i><span>Wishlist</span></a></li>
         </ul>
+        <% } %>
       </div>
     </nav>
 

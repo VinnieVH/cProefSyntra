@@ -36,7 +36,8 @@ WEBSITE TO-DO-LIST:
 * style navbar category items ✓
 * add flags for different languages ✓
 * push footer down so button doesn't overlap (register page) ✓
-* setup user authentication and validation - GETTING THERE OH BOY
+* setup user authentication and validation ✓
+* Fix validation for register page - needs work
 * add show page for products
 * add show route
 * add account detail page

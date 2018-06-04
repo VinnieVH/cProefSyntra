@@ -401,6 +401,7 @@ li>a.li-a-navbar {
 }
 
 .login-form {
+    padding-top: 30px;
     width: 50%;
     margin: 0 auto;
 }

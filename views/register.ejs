@@ -1,42 +1,28 @@
 <% include ../partials/header %>
 <main class="login-register">
-    <div class="container">
+    <div class="login-page container">
         <h1 id="h1-register">Welcome</h1>
-         <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <h2>I already have an account</h2>
-                <form action="/login" method="POST">
-                    <label for="loginEmail">Email</label>
-                    <input id="loginEmail" type="text" name="email">
-                    <label for="loginPassword">Password</label>
-                    <input id="loginPassword" type="password" name="password">
-                    <div class="button-group">
-                        <button class="button">Login</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <h2>I am a new customer</h2>
-                <% if(errors){ %>
-                  <% errors.forEach(function() { %>
-                  <% console.log(msg); %>
-                        <div class="alert alert-danger"></div>
-                   <% }); %>
+        <div class="login-form">
+            <h2>I am a new customer</h2>
+            <% if(error){ %>
+                <% error.forEach(function(err) { %>
+                <% console.log(err.msg); %>
+                        <div class="alert alert-danger"><%= err.msg %></div>
+                    <% }); %>
                 <% }; %>
-                <form action="/register" method="POST">
-                    <label for="firstName">First name</label>
-                    <input id="firstName" type="text" name="firstName">
-                    <label for="lastName">Name</label>
-                    <input id="lastName" type="text" name="lastName">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" name="email">
-                    <label for="password">Password</label>
-                    <input id="password" type="password" name="password">
-                    <div class="button-group">
-                        <button class="button">Sign Up</button>
-                    </div>
-                </form>
-            </div>
+            <form action="/register" method="POST">
+                <label for="firstName">First name</label>
+                <input id="firstName" type="text" name="firstName">
+                <label for="lastName">Name</label>
+                <input id="lastName" type="text" name="lastName">
+                <label for="email">Email</label>
+                <input id="email" type="text" name="email">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+                <div class="button-group">
+                    <button class="button">Sign Up</button>
+                </div>
+            </form>
         </div>
     </div>
 </main>
