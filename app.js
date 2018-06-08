@@ -44,8 +44,10 @@ app.use(passport.session());
 // Passport strategy
 passport.use(new LocalStrategy({
     usernameField: 'email',
-    passwordField: 'password'},
-    function(email, password, done) {
+    passwordField: 'password',
+    passReqToCallback: true
+},
+    function(req, email, password, done) {
         User.getUserByEmail(email, function(err, user) {
             if(err) throw err;
             if(!user){
