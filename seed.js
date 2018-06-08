@@ -79,7 +79,7 @@ function seedDB(){
                     if(err){
                         console.log(err)
                     } else {
-                        console.log("added a product");
+                        console.log("added a product..");
                     }
                 });
             });

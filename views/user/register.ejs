@@ -1,15 +1,9 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 <main class="login-register">
     <div class="login-page container">
         <h1 id="h1-register">Welcome</h1>
         <div class="login-form">
             <h2>I am a new customer</h2>
-            <% if(error){ %>
-                <% error.forEach(function(err) { %>
-                <% console.log(err.msg); %>
-                        <div class="alert alert-danger"><%= err.msg %></div>
-                    <% }); %>
-                <% }; %>
             <form action="/register" method="POST">
                 <label for="firstName">First name</label>
                 <input id="firstName" type="text" name="firstName">
@@ -20,11 +14,11 @@
                 <label for="password">Password</label>
                 <input id="password" type="password" name="password">
                 <div class="button-group">
-                    <button class="button">Sign Up</button>
+                    <button type="submit"class="button">Sign Up</button>
                 </div>
             </form>
         </div>
     </div>
 </main>
 
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

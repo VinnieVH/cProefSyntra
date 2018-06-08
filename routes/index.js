@@ -4,7 +4,6 @@ const express  =  require("express"),
     User       = require("../database_models/user"),
     Product    = require("../database_models/product");
 
-
 router.get("/", function(req, res){
     res.render("landing");
 });
@@ -25,7 +24,8 @@ router.get("/home", function(req, res){
 // =====================
 // Get register page
 router.get("/register", function(req, res) {
-   res.render("register"); 
+    var messages = req.flash("error");
+    res.render("user/register");
 });
 
 // Handle signup logic
@@ -43,7 +43,7 @@ router.post("/register", function(req, res) {
     });       
     User.createUser(newUser, function(err, user) {
         if(err) {
-            req.flash("error", "This email address has allready been registered.");
+            req.flash("error", "This email address has already been registered.");
         } else {
             passport.authenticate("local")(req, res, function() {
                 req.flash("success", 'Your account has been successfully created. Welcome to Discover Yourself, ' + user.firstName + "!");
@@ -56,7 +56,7 @@ router.post("/register", function(req, res) {
 
 // Show login form
 router.get("/login", function(req, res) {
-   res.render("login"); 
+   res.render("user/login"); 
 });
 
 // Handle login  logic
