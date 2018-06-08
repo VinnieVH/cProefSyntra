@@ -75,7 +75,7 @@ function seedDB(){
         } else {
             console.log("removed products!");
             data.forEach(function(seed){
-                Product.create(seed, function(err, campground){
+                Product.create(seed, function(err, product){
                     if(err){
                         console.log(err)
                     } else {

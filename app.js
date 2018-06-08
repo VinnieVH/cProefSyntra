@@ -1,18 +1,21 @@
-const bodyParser     = require("body-parser"),
-    mongoose         = require("mongoose"),
-    express          = require("express"),
-    session          = require("express-session"),
-    expressValidator = require("express-validator"), 
-    flash            = require("connect-flash"),
-    passport         = require("passport"),
-    LocalStrategy    = require("passport-local").Strategy,
-    methodOverride   = require("method-override"),
-    app              = express();
+const bodyParser       = require("body-parser"),
+      mongoose         = require("mongoose"),
+      express          = require("express"),
+      session          = require("express-session"),
+      expressValidator = require("express-validator"), 
+      flash            = require("connect-flash"),
+      passport         = require("passport"),
+      LocalStrategy    = require("passport-local").Strategy,
+      methodOverride   = require("method-override"),
+      app              = express();
 
 // Requiring MODELS
 const User    = require("./database_models/user"),
     Product   = require("./database_models/product"),
     seedDB    = require("./seed");
+
+// Requiring ROUTES
+const indexRoutes = require("./routes/index");
     
 // Connection string to the DB
 mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/cProef_Syntra");
@@ -20,6 +23,9 @@ mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/cProef_Syntra")
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+
+// Connect Flash
+app.use(flash());
 
 // seed the database with some testing data
 seedDB();
@@ -31,58 +37,9 @@ app.use(session ({
     saveUninitialized: true
 }));
 
-// Passport init
+// Passport configuration
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Express Validator
-app.use(expressValidator({
-  errorFormatter: function(param, msg, value) {
-      var namespace = param.split('.')
-      , root    = namespace.shift()
-      , formParam = root;
-
-    while(namespace.length) {
-      formParam += '[' + namespace.shift() + ']';
-    }
-    return {
-      param : formParam,
-      msg   : msg,
-      value : value
-    };
-  }
-}));
-
-
-// Connect Flash
-app.use(flash());
-
-// Global Variables for flash
-app.use(function (req, res, next) {
-    res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success");
-    res.locals.user = req.user || null;
-    next();
-  });
-
-app.get("/", function(req, res){
-    res.render("landing");
-});
-
-
-app.get("/home", function(req, res){
-      Product.find({}, function(err, allProducts){
-       if(err){
-           console.log(err);
-       } else {
-          res.render("home",{products:allProducts});
-       }
-    });
-});
-
-// =====================
-// AUTHENTICATION ROUTES
-// =====================
 
 // Passport strategy
 passport.use(new LocalStrategy({
@@ -92,90 +49,40 @@ passport.use(new LocalStrategy({
         User.getUserByEmail(email, function(err, user) {
             if(err) throw err;
             if(!user){
-                return done(null, false, {message: "Unknown User"});
+                return done(null, false);
             }
-
             User.comparePassword(password, user.password, function(err, isMatch){
                 if(err) throw err;
                 if(isMatch){
                     return done(null, user);
                 }
                 else {
-                    return done(null, false, {message: "Invalid Password"});
+                    return done(null, false);
                 }
             });
         })
     }));
 
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-    });
-    
-passport.deserializeUser(function(id, done) {
-User.getUserById(id, function(err, user) {
-    done(err, user);
-});
-});
-
-// ROOT ROUTE
-app.get("/register", function(req, res) {
-   res.render("register"); 
-});
-
-// Handle signup logic
-app.post("/register", function(req, res) {
-    var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
-    var email = req.body.email;
-    var password = req.body.password;
-
-    // Validation
-    req.checkBody('firstName', 'First Name is required').notEmpty();
-    req.checkBody('lastName', 'Last Name is required').notEmpty();
-	req.checkBody('email', 'Email is required').notEmpty();
-	req.checkBody('email', 'Email is not valid').isEmail();
-	req.checkBody('password', 'Password is required').notEmpty();
-
-    var errors = req.validationErrors();
-    
-    if(errors){
-        res.render("register", {
-            error: errors
-        });
-    } else {
-        var newUser = new User({
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            password: password
+    passport.serializeUser(function(user, done) {
+        done(null, user.id);
         });
         
-        User.createUser(newUser, function(err, user) {
-            if(err) throw err;
-            console.log(user);
+    passport.deserializeUser(function(id, done) {
+        User.getUserById(id, function(err, user) {
+            done(err, user);
         });
-
-        req.flash('success', 'You are registered and can now login');
-        res.redirect("login");
-    }
-}); 
-
-// Show login form
-app.get("/login", function(req, res) {
-   res.render("login"); 
 });
 
-// Handle login  logic
-app.post("/login", passport.authenticate("local", {successRedirect: "home", failureRedirect: "login", failureFlash: true}),
-function(req, res){
-    res.redirect("home");
-});
+// Global Variables for flash
+app.use(function (req, res, next) {
+    res.locals.user = req.user || null;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+  });
 
-// Logout route
-app.get("/logout", function(req, res) {
-   req.logout();
-   res.redirect("home");
-});
+// Use the routes
+app.use(indexRoutes);
 
 // Setup port 
 app.set('port', (process.env.PORT || 3000));
