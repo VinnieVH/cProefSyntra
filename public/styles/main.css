@@ -154,7 +154,6 @@ form>label {
     text-decoration: none !important;
     width: 50%;
     margin-top: 0;
-    display: inline-block;
     text-align: right;
     color: #040405;
 }
@@ -315,7 +314,6 @@ li>a.li-a-navbar {
 
 .hvr-underline-from-center {
     display: block;
-    vertical-align: middle;
     transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;

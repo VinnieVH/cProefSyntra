@@ -15,7 +15,8 @@ const User    = require("./database_models/user"),
     seedDB    = require("./seed");
 
 // Requiring ROUTES
-const indexRoutes = require("./routes/index");
+const indexRoutes = require("./routes/index"),
+      userRoutes  = require("./routes/user");
     
 // Connection string to the DB
 mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/cProef_Syntra");
@@ -47,7 +48,7 @@ passport.use(new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
 },
-    function(req, email, password, done) {
+    function(req, email, password, done) {      
         User.getUserByEmail(email, function(err, user) {
             if(err) throw err;
             if(!user){
@@ -85,6 +86,7 @@ app.use(function (req, res, next) {
 
 // Use the routes
 app.use(indexRoutes);
+app.use(userRoutes);
 
 // Setup port 
 app.set('port', (process.env.PORT || 3000));

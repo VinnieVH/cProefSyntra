@@ -1,23 +1,8 @@
 const express        =  require("express"),
     router           = express.Router(),
     passport         = require("passport"),
-    User             = require("../database_models/user"),
-    Product          = require("../database_models/product");
+    User             = require("../database_models/user");
 
-router.get("/", function(req, res){
-    res.render("landing");
-});
-
-
-router.get("/home", function(req, res){
-      Product.find({}, function(err, allProducts){
-       if(err){
-           console.log(err);
-       } else {
-          res.render("home",{products:allProducts});
-       }
-    });
-});
 
 // =====================
 // AUTHENTICATION ROUTES
