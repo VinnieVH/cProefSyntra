@@ -63,7 +63,7 @@ var data = [
           image: "https://assets.academy.com/mgen/34/20088434.jpg",
           price: "€24,95",
           description: "T-shirt basic",
-          sizes: "XS, S, M, L, XL, XXL"
+          enumSize: []
     }
 ]
  

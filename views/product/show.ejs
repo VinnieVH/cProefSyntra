@@ -1,0 +1,19 @@
+<% include ../../partials/header %>
+<h1>Product page.</h1>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-7">
+            <div class="thumbnail">
+                <img class="product-image" src="<%=product.image%>">
+            </div>
+            <h4 class="item-brand"><%= product.brand %></h4>
+            <h4 class="item-price"><%= product.price %></h4>
+            <h4 class="item-category"><%= product.category %></h4>
+            <h4 class="item-category"><%= product.description %></h4>
+            <h4 class="item-category"><%= product.sizes %></h4>
+        </div>
+    </div>
+</div>
+
+<% include ../../partials/footer %>

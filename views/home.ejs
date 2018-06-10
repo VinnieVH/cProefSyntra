@@ -6,7 +6,7 @@
         <div class="row">
             <% products.forEach(function(product){ %>
             <div class="col-xs-6 col-md-3">
-                <a href="https://www.google.com">
+                <a href="product/<%=product._id%>">
                     <div class="thumbnail">
                         <img class="product-image" src="<%=product.image%>">
                     <div class="item-content">
@@ -16,7 +16,7 @@
                     </div>
                 </a>
                 <div class="item-options">
-                    <a href="https://www.google.com" type="button" class="item-shoppingbag btn btn-default"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="product/<%=product._id%>" type="button" class="item-shoppingbag btn btn-default"><i class="fas fa-shopping-bag"></i></a>
                     <a href="https://www.facebook.com" type="button" class="item-wishlist btn btn-default"><i class="fas fa-heart"></i></a>
                 </div>
             </div>

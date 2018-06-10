@@ -19,6 +19,17 @@ router.get("/home", function(req, res){
     });
 });
 
+// Show - shows more information about a product
+router.get("/product/:id", function(req, res) {
+    Product.findById(req.params.id).exec(function(err, foundProduct) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("product/show", {product: foundProduct});
+        }
+    });
+});
+
 // =====================
 // AUTHENTICATION ROUTES
 // =====================
