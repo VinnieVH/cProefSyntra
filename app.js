@@ -7,6 +7,7 @@ const bodyParser       = require("body-parser"),
       passport         = require("passport"),
       LocalStrategy    = require("passport-local").Strategy,
       methodOverride   = require("method-override"),
+      MongoStore       = require("connect-mongo")(session),
       app              = express();
 
 // Requiring MODELS
@@ -35,7 +36,9 @@ seedDB();
 app.use(session ({
     secret: "Lmao dank memes Xd",
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({mongooseConnection: mongoose.connection}),
+    cookie: {maxAge: 180 * 60 * 1000}
 }));
 
 // Passport configuration
@@ -79,6 +82,7 @@ passport.use(new LocalStrategy({
 // Global Variables for flash
 app.use(function (req, res, next) {
     res.locals.user = req.user || null;
+    res.locals.session = req.session;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
     next();

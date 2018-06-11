@@ -30,4 +30,8 @@ router.get("/product/:id", function(req, res) {
     });
 });
 
+router.get("/add-to-bag/:id", function(req, res){
+    // Got to add it
+});
+
 module.exports = router;
