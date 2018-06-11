@@ -1,4 +1,4 @@
-# cProefSyntra
+# cProefSyntra (Web side of things)
 
 WEBSITE TO-DO-LIST: 
 
@@ -37,9 +37,19 @@ WEBSITE TO-DO-LIST:
 * add flags for different languages ✓
 * push footer down so button doesn't overlap (register page) ✓
 * setup user authentication and validation ✓
-* Fix validation for register page - needs work
-* add show page for products
-* add show route
+* make directory for different routes ✓
+* Fix validation for register page - getting validation, needs clean up
+* add show page for products ✓
+* add show route ✓
+* style the show page for products
+* add shopping cart in
+* add wishlist in
 * add account detail page
 * add account details route
-* make directory for different routes
+
+* weed out CSS file in different files - semi
+
+
+# cProefSyntra (back end side of things)
+
+WPF TO-DO-LIST:

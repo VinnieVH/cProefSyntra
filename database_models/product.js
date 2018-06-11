@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var productSchema = new mongoose.Schema({
    category: String,
    brand: String,
+   brandIcon: String,
    image: String,
    price: String,
    description: String,

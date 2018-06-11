@@ -1,0 +1,75 @@
+.brand-image {
+    width: 155px;
+    height: 45px;
+}
+
+/*NAVIGATION BAR - styling the navbar*/
+.navbar-brand {
+    padding: 0;
+    float: left;
+    height: 45px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar-styling {
+    background: #040405;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: 2px solid #040405;
+    border-radius: 0%;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.span {
+    display: block;
+    position: relative;
+}
+
+.padding-wishlist{
+    padding-right: 50px;
+}
+
+.nav-wishlist {
+    color: #e58d12;
+}
+
+.nav-shoppingbag {
+    color: #e58d12;
+}
+
+.input-size {
+    width: 150px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(232, 234, 237);
+    text-align: center;
+}
+
+.navbar-default .navbar-brand {
+    color: rgb(232, 234, 237);
+    margin-top: 0;
+}
+
+.navbar-nav>li>a {
+    height: 49.55px;
+}
+
+li>a.li-a-navbar {
+    padding: 4px 15px;
+}
+
+#english:selected {
+    color: #e58d12;
+}
+
+.navbar-default .navbar-nav>li>a>span {
+    color: rgb(232, 234, 237);
+    font-size: 10px;
+    padding-bottom: 0;
+}
