@@ -2,18 +2,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+            <h1> <%= product.brand %> - <%= product.category%></h1>
             <div class="thumbnail">
-                <img class="" src="<%=product.image%>">
+                <img class="show-image" src="<%=product.image%>">
             </div>
-            <h4 class=""><%= product.description %></h4>
         </div>
         <div class="col-md-6">
-            <img class="" src="<%=product.brandIcon%>">
-            <h4 class=""><%= product.brand %></h4>
-            <h4 class=""><%= product.price %></h4>
-            <h4 class=""><%= product.category %></h4>
-            <h4 class=""><%= product.sizes %></h4>
-            <a href="/add-to-bag"class="button"> <i class="fas fa-shopping-bag"></i> Add to bag</a>
+            <div class="show-details">
+                <img class="show-brand-icon" src="<%=product.brandIcon%>">
+                <h4 id="show-details">Product Details</h4>
+                <hr>
+                <h4 class="show-description"><%= product.description %></h4>
+                <h4 class="show-prize"><%= product.price %></h4>
+                <h4 class="show-sizes"><%= product.sizes %></h4>
+            </div>
+            <div class="show-options">
+                <a href="/add-to-bag" id="add-to-bag" class="button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
+                <a href="/add-to-bag" id="add-to-wishlist" class="button"><i class="far fa-heart"></i> Add to Wishlist</a>
+            </div>
         </div>
     </div>
 </div>

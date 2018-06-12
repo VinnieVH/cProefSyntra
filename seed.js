@@ -17,7 +17,7 @@ var data = [
           image: "https://mosaic02.ztat.net/vgs/media/pdp-zoom/PO/21/2B/01/XQ/11/PO212B01X-Q11@9.jpg",
           price: "€79,95",
           description: "Hanford - Sneakers laag",
-          sizes: ""
+          sizes: "36, 37, 38, 39, 40, 41, 42, 43, 44, 45"
     },
     {
           category: "T-shirt",

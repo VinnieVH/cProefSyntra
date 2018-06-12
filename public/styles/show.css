@@ -1,0 +1,58 @@
+hr {
+    margin-bottom: 30px;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+#add-to-bag {
+    width: 200px;
+    margin-right: 30px;
+}
+
+#add-to-wishlist {
+    width: 250px;
+}
+
+.show-brand-icon {
+    text-align: right;
+}
+
+.show-description {
+    padding-left: 30px;
+}
+
+.show-side-image {
+    height: 20px;
+    width: 20px;
+}
+
+.show-sizes {
+    margin-bottom: 50px;
+}
+
+.show-prize {
+    float:right;
+}
+
+.show-brand-icon {
+    width: 200px;
+    height: 200px;
+}
+
+.show-details {
+    margin-bottom: 150px;
+}
+
+.show-image {
+    width: 350px;
+    height: 250px;
+}
+
+.show-options {
+    text-align: center;
+}
+
+
+
