@@ -41,9 +41,9 @@ WEBSITE TO-DO-LIST:
 * Fix validation for register page - getting validation, needs clean up
 * add show page for products ✓
 * add show route ✓
-* style the show page for products - semi
-* make cloth sizes an array for product show page
-* add shopping cart in
+* style the show page for products ✓ maybe some more?
+* make cloth sizes an array for product show page ✓
+* add shopping cart in - semi
 * add wishlist in
 * add account detail page
 * add account details route

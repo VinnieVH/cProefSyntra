@@ -27,7 +27,8 @@ router.post("/register", function(req, res) {
     });       
     User.createUser(newUser, function(err, user) {
         if(err) {
-            req.flash("error", err.message); 
+            console.log(err.message);
+            req.flash("error", err.message);
             res.redirect("/register");
         } else {
             passport.authenticate("local")(req, res, function() {
@@ -47,7 +48,7 @@ router.get("/login", function(req, res) {
 // Handle login  logic
 router.post("/login", passport.authenticate("local", {successRedirect: "home", failureRedirect: "login", failureFlash: true}),
 function(req, res){
-    res.redirect("home");
+     res.redirect("home");
 });
 
 // Logout route

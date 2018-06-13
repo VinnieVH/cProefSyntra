@@ -1,6 +1,7 @@
 const express        =  require("express"),
     router           = express.Router(),
     passport         = require("passport"),
+    Shoppingbag      = require("../database_models/shoppingbag"),
     User             = require("../database_models/user"),
     Product          = require("../database_models/product");
 
@@ -31,7 +32,18 @@ router.get("/product/:id", function(req, res) {
 });
 
 router.get("/add-to-bag/:id", function(req, res){
-    // Got to add it
+    let productId = req.params.id;
+    let shoppingbag = new Shoppingbag(req.session.shoppingbag ? req.session.shoppingbag: {});
+
+    Product.findById(productId, function(err, product) {
+        if(err){
+            return res.redirect("/home");
+        }
+        shoppingbag.add(product, product.id);
+        req.session.shoppingbag = shoppingbag;
+        console.log(req.session.shoppingbag);
+        res.redirect("/home");
+    });
 });
 
 module.exports = router;

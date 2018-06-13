@@ -15,8 +15,35 @@ hr {
     width: 250px;
 }
 
+.show-dropdown {
+    margin-left: 30px;
+    margin-top: 100px;
+    background-color: #040405;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.show-dropdown:hover {
+    background-color: #040405;
+    color: white;
+}
+
+.show-dropdown:active {
+    background-color: #040405;
+    color: white;
+}
+
+.show-dropdown-menu {
+    background-color: white;
+    text-decoration: uppercase;
+    color: white;
+}
+
 .show-brand-icon {
-    text-align: right;
+    width: 200px;
+    height: 200px;
 }
 
 .show-description {
@@ -32,8 +59,11 @@ hr {
     margin-bottom: 50px;
 }
 
-.show-prize {
+.show-price {
+    margin-top: 110px;
     float:right;
+    font-size: 25px;
+    
 }
 
 .show-brand-icon {
@@ -42,7 +72,7 @@ hr {
 }
 
 .show-details {
-    margin-bottom: 150px;
+    margin-bottom: 75px;
 }
 
 .show-image {
@@ -52,6 +82,7 @@ hr {
 
 .show-options {
     text-align: center;
+    margin-left: 40px;
 }
 
 

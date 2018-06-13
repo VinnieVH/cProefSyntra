@@ -13,12 +13,22 @@
                 <h4 id="show-details">Product Details</h4>
                 <hr>
                 <h4 class="show-description"><%= product.description %></h4>
-                <h4 class="show-prize"><%= product.price %></h4>
-                <h4 class="show-sizes"><%= product.sizes %></h4>
+                <h4 class="show-price">€<%= product.price %></h4>
+                <div class="dropdown">
+                    <button class="show-dropdown btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Choose size
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="show-dropdown-menu dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <% product.sizes.forEach(function(size) { %>
+                            <li><a><%= size %></a></li>
+                       <% }) %>
+                    </ul>
+                  </div>
             </div>
             <div class="show-options">
-                <a href="/add-to-bag" id="add-to-bag" class="button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
-                <a href="/add-to-bag" id="add-to-wishlist" class="button"><i class="far fa-heart"></i> Add to Wishlist</a>
+                <a href="/add-to-bag/<%=product._id%>" id="add-to-bag" class="button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
+                <a href="/add-to-bag/<%=product._id%>" id="add-to-wishlist" class="button"><i class="far fa-heart"></i> Add to Wishlist</a>
             </div>
         </div>
     </div>
