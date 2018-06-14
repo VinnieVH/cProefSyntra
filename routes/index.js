@@ -11,11 +11,17 @@ router.get("/", function(req, res){
 
 
 router.get("/home", function(req, res){
+    let shoppingbag = new Shoppingbag(req.session.shoppingbag ? req.session.shoppingbag: {});
       Product.find({}, function(err, allProducts){
        if(err){
            console.log(err);
        } else {
-          res.render("home",{products:allProducts});
+           if(!req.session.shoppingbag){
+            res.render("home",{products:allProducts, shoppingbag: null});
+           }
+           else {
+            res.render("home",{products:allProducts, shoppingbag: shoppingbag.generateArray(), totalPrice: shoppingbag.totalPrice});
+           }
        }
     });
 });

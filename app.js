@@ -12,8 +12,7 @@ const bodyParser       = require("body-parser"),
 
 // Requiring MODELS
 const User    = require("./database_models/user"),
-    Product   = require("./database_models/product"),
-    seedDB    = require("./seed");
+      seedDB  = require("./seed");
 
 // Requiring ROUTES
 const indexRoutes = require("./routes/index"),
