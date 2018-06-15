@@ -85,6 +85,8 @@ hr {
     margin-left: 40px;
 }
 
+/* Shoppingbag styling  */
+
 .clearfix:after {
     content: "";
     display: table;
@@ -106,7 +108,7 @@ hr {
 
 .shopping-cart {
     z-index: 1;
-    margin: -10px 0px 0px 1000px;
+    margin: -10px 0px 0px;
     float: right;
     background: #ede8e8;
     width: 320px;
@@ -116,7 +118,7 @@ hr {
 }
 .shopping-cart-header {
     border-bottom: 1px solid #040405;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     margin-bottom: 20px;
 }
 
@@ -174,10 +176,33 @@ ul {
 }
 
 .shopping-cart-container {
-    margin: auto;
-    width: 80%;
+    width: 100px;
+  }
+  .dropdown-menu {
+      width: 400px;
+      border: solid transparent;
+      border: 1px solid #040405;
+      border-radius: 0;
+      padding-left: 15px;
+      padding-right: 15px;
   }
   
-  
+.dropdown-menu>img {
+    width: 20px;
+    height: 20px;
+}
 
+.dropdown-menu:after {
+    bottom: 100%;
+	left: 25%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #ede8e8;
+	border-width: 8px;
+	margin-left: -8px;
+}
 

@@ -1,3 +1,14 @@
+button>i {
+    font-size: 1.5em;
+}
+
+button {
+    background-color: #040405;
+    border: 0;
+    height: 49.5px;
+    color:  rgb(232, 234, 237);
+}
+
 .brand-image {
     width: 155px;
     height: 45px;
@@ -51,6 +62,12 @@
     text-align: center;
 }
 
+.navbar-default .navbar-nav>li>button {
+    color: rgb(232, 234, 237);
+    text-align: center;
+    background-color: #040405;
+}
+
 .navbar-default .navbar-brand {
     color: rgb(232, 234, 237);
     margin-top: 0;
@@ -60,7 +77,15 @@
     height: 49.55px;
 }
 
+.navbar-nav>li>button {
+    height: 49.55px;
+}
+
 li>a.li-a-navbar {
+    padding: 4px 15px;
+}
+
+li>button.li-a-navbar {
     padding: 4px 15px;
 }
 
@@ -68,7 +93,7 @@ li>a.li-a-navbar {
     color: #e58d12;
 }
 
-.navbar-default .navbar-nav>li>a>span {
+.navbar-default .navbar-nav>li>button>span {
     color: rgb(232, 234, 237);
     font-size: 10px;
     padding-bottom: 0;

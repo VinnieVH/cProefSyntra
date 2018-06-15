@@ -66,18 +66,20 @@
         <% if(user){ %>
         <ul class="nav navbar-nav navbar-right">
           <li>
-              <% if(!session.shoppingbag) { %>
-              <a href="#" id="shoppingbag" class="li-a-navbar hvr-underline-from-center">
-                  <i class="nav-shoppingbag fas fa-shopping-bag"></i>
-                  <span>Shopping Bag</span>
-              </a>
-              <% } else { %>
-                <a href="#" id="shoppingbag" class="li-a-navbar hvr-underline-from-center">
-                    <i class="nav-shoppingbag fas fa-shopping-bag"></i>
-                    <span class="badge"><%=session.shoppingbag.totalQty%></span>
-                    <span>Shopping Bag</span>
-                </a>
-              <% } %>
+              <div class="dropdown">
+                  <button id="shoppingbag" class="li-a-navbar hvr-underline-from-center dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <i class="nav-shoppingbag fas fa-shopping-bag"></i>
+                      <span>Shopping Bag</span>
+                  </button>
+                  <ul class="dropdown-menu shopping-cart-container container" aria-labelledby="dropdownMenu1">
+                              <li class="clearfix">
+                                  <span class="item-name">Tommy Hilfiger - Jeans Jacket</span>
+                                  <span class="item-price">€ 200</span>
+                                  <span class="item-quantity">Quantity: 1</span>
+                                </li>
+
+                  </ul>
+                </div>
           </li>
           <li class="padding-wishlist"><a href="#" class="li-a-navbar hvr-underline-from-center"><i class="nav-wishlist far fa-heart"></i><span>Wishlist</span></a></li>
         </ul>
@@ -85,49 +87,27 @@
       </div>
     </nav>
     <% if(user) { %>
-        <% if(session.shoppingbag) { %>
     <div class="shopping-cart-container container">
         <div class="shopping-cart">
           <div class="shopping-cart-header">
-              <i class="cart-icon fas fa-shopping-bag"></i><span class="badge"><%=session.shoppingbag.totalQty%></span>
+              <i class="cart-icon fas fa-shopping-bag"></i><span class="badge"></span>
             <div class="shopping-cart-total">
               <span class="lighter-text">Total:</span>
-              <span class="main-color-text">€ <%=session.shoppingbag.totalPrice%></span>
+              <span class="main-color-text">€ 200</span>
             </div>
           </div>
           <ul class="shopping-cart-items">
-            <% products.forEach(function(product) { %>
             <li class="clearfix">
-              <img src="<%=product.image%>" alt="item1" />
-              <span class="item-name"><%=product.brand%> - <%=product.category%></span>
-              <span class="item-price">€ <%=product.price%></span>
-              <span class="item-quantity">Quantity: <%=product.Qty%></span>
+              <img src="http://shoebyblog.nl/wp-content/uploads/2016/08/Blogpost-Laagjes-7.jpg" alt="item1" />
+              <span class="item-name">Tommy Hilfiger - Jeans Jacket</span>
+              <span class="item-price">€ 200</span>
+              <span class="item-quantity">Quantity: 1</span>
             </li>
-            <% }); %>
           </ul>
           <a href="#" class="button">Checkout</a>
         </div> <!--end shopping-cart -->
     </div>
-    <% } else { %>
-        <div class="shopping-cart-container container">
-            <div class="shopping-cart">
-              <div class="shopping-cart-header">
-                  <i class="cart-icon fas fa-shopping-bag"></i>
-                <div class="shopping-cart-total">
-                  <span class="lighter-text">Total:</span>
-                  <span class="main-color-text">€ 0</span>
-                </div>
-              </div>
-              <ul class="shopping-cart-items">
-                <li class="clearfix">
-                  <span class="item-name">Your shoppingbag is still empty!</span>
-                </li>
-              </ul>
-              <a href="/home" class="button">Start shopping now!</a>
-            </div> <!--end shopping-cart -->
-        </div>
-        <% } %>
-      <% } %>
+    <% }; %>
 
     <div class="container">
         <% if(error && error.length > 0){ %>
