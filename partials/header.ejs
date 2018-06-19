@@ -5,12 +5,22 @@
     <title>Discover Yourself</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -69,15 +79,30 @@
               <div class="dropdown">
                   <button id="shoppingbag" class="li-a-navbar hvr-underline-from-center dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <i class="nav-shoppingbag fas fa-shopping-bag"></i>
-                      <span>Shopping Bag</span>
+                      <span class="shoppingbag-name">Shopping Bag</span>
                   </button>
                   <ul class="dropdown-menu shopping-cart-container container" aria-labelledby="dropdownMenu1">
-                              <li class="clearfix">
-                                  <span class="item-name">Tommy Hilfiger - Jeans Jacket</span>
-                                  <span class="item-price">€ 200</span>
-                                  <span class="item-quantity">Quantity: 1</span>
-                                </li>
-
+                    <li>
+                      <div class="shopping-cart-header">
+                        <i class="cart-icon fas fa-shopping-bag"></i>
+                        <span class="shopping-span badge">1</span>
+                        <div class="shopping-cart-total">
+                          <span class="shopping-total">Total:</span> 
+                          <span class="">€ 200</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <ul class="clearfix shopping-cart-items">
+                        <li class="clearfix">
+                          <img src="http://shoebyblog.nl/wp-content/uploads/2016/08/Blogpost-Laagjes-7.jpg" alt="item1" />
+                          <span class="item-name">Tommy Hilfiger - Jeans Jacket</span>
+                          <span class="item-price">€ 200</span>
+                          <span class="item-quantity">Quantity: 1</span>
+                        </li>
+                      </ul>
+                    </li>
+                    <a href="#" class="button">Checkout</a>
                   </ul>
                 </div>
           </li>
@@ -86,29 +111,6 @@
         <% } %>
       </div>
     </nav>
-    <% if(user) { %>
-    <div class="shopping-cart-container container">
-        <div class="shopping-cart">
-          <div class="shopping-cart-header">
-              <i class="cart-icon fas fa-shopping-bag"></i><span class="badge"></span>
-            <div class="shopping-cart-total">
-              <span class="lighter-text">Total:</span>
-              <span class="main-color-text">€ 200</span>
-            </div>
-          </div>
-          <ul class="shopping-cart-items">
-            <li class="clearfix">
-              <img src="http://shoebyblog.nl/wp-content/uploads/2016/08/Blogpost-Laagjes-7.jpg" alt="item1" />
-              <span class="item-name">Tommy Hilfiger - Jeans Jacket</span>
-              <span class="item-price">€ 200</span>
-              <span class="item-quantity">Quantity: 1</span>
-            </li>
-          </ul>
-          <a href="#" class="button">Checkout</a>
-        </div> <!--end shopping-cart -->
-    </div>
-    <% }; %>
-
     <div class="container">
         <% if(error && error.length > 0){ %>
           <div class="flash-box alert alert-danger" role="alert">
