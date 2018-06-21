@@ -29,7 +29,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(flash());
 
 // seed the database with some testing data
-seedDB();
+// seedDB();
 
 // Express Session
 app.use(session ({

@@ -95,6 +95,7 @@ form>label {
 
 /* HOMEPAGE - Box that contains an item for sale*/
 .item-content {
+    border-top: 1px solid rgba(4,4,5,0.2);
     padding: 15px;
     text-align: center;
     padding-bottom: 0;
@@ -109,6 +110,7 @@ form>label {
 .product-image {
     position: relative;
     width:  150px;
+    padding-bottom: 5px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -153,60 +155,6 @@ form>label {
     color: #040405;
 }
 
-.item-options {
-    border-top: 1px solid #cfd2d6;
-    height: 100%;
-    color: #040405;
-    padding: 0;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.item-shoppingbag {
-    border-radius: 0;
-    display: inline;
-    border: none;
-    background: none;
-    padding-right: 20%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.item-shoppingbag:hover {
-    background: none;
-}
-
-.item-shoppingbag>i {
-    color: #040405;
-    font-size: 2em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: none;
-    background: none;
-}
-
-.item-wishlist {
-    border-radius: 0;
-    border-right: 0;
-    display: inline;
-    padding: 0;
-    border: none;
-    background: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.item-wishlist:hover {
-    background:none;
-}
-
-.item-wishlist>i {
-    color: #f41e13;
-    font-size: 2em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 /* FOOTER - Social media right*/
 .social-media {
     font-size: 1.15em;
@@ -229,39 +177,6 @@ form>label {
     font-size: 18px;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-/* NAVIGATION BAR - Hover effects for the list items*/
-.navbar-default .navbar-nav>li>a:hover {
-    color: rgb(232, 234, 237);
-}
-
-.hvr-underline-from-center {
-    display: block;
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    backface-visibility: hidden;
-    position: relative;
-    overflow: hidden;
-}
-
-.hvr-underline-from-center:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    background: #e58d12;
-    height: 4px;
-    transition-property: left, right;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-}
-
-.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
-    left: 0;
-    right: 0;
 }
 
 /*REGISTERPAGE - styling both buttons, login & register*/
@@ -326,6 +241,10 @@ form>label {
   transform: scaleX(1);
 }
 
+.error-form {
+    color: red;
+}
+
 /*LOGIN PAGE - Styling the page*/
 .login-page {
     content: center;
@@ -348,18 +267,4 @@ form>label {
     position: fixed;
     z-index: 1;
     font-size: 12px;
-}
-
-.language-option:before {
-    content: '';
-    background: #e58d12;
-    width: 4px;
-    display: block;
-    position: absolute;
-    height: 20px;
-    top: 1em;
-}
-
-.language-option:selected {
-    color: #e58d12;
 }

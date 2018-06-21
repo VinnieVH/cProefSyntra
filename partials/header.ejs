@@ -64,7 +64,7 @@
       </div>
     </nav>
     <nav class="category-bar navbar navbar-default navbar-fixed-top">
-      <div class="container">
+      <div class="navbar-border container">
         <ul class="nav navbar-nav navbar-left">
           <li class="category-item hvr-underline-from-center"><a href="/register">Jackets</a></li>
           <li class="category-item hvr-underline-from-center"><a href="/login">Shirts</a></li>
@@ -73,7 +73,6 @@
           <li class="category-item hvr-underline-from-center"><a href="#">Trousers</a></li>
           <li class="category-item hvr-underline-from-center"><a href="#">Shoes</a></li>
         </ul>
-        <% if(user){ %>
         <ul class="nav navbar-nav navbar-right">
           <li>
               <div class="dropdown">
@@ -106,17 +105,41 @@
                   </ul>
                 </div>
           </li>
-          <li class="padding-wishlist"><a href="#" class="li-a-navbar hvr-underline-from-center"><i class="nav-wishlist far fa-heart"></i><span>Wishlist</span></a></li>
+          <li>
+            <div class="dropdown">
+              <button id="wishlist" class="li-a-navbar hvr-underline-from-center dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true">
+                <i class="nav-wishlist far fa-heart"></i>
+                <span class="shoppingbag-name">Wishlist</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right shopping-cart-container container" aria-labelledby="dropdownMenu1">
+                <li>
+                  <div class="shopping-cart-header">
+                    <i class="nav-wishlist far fa-heart"></i>
+                    <div class="shopping-cart-total">
+                      <span class="shopping-total">Total:</span>
+                      <span class="">€ 200</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <ul class="clearfix shopping-cart-items">
+                    <li class="clearfix">
+                      <img src="http://shoebyblog.nl/wp-content/uploads/2016/08/Blogpost-Laagjes-7.jpg" alt="item1" />
+                      <span class="item-name">Tommy Hilfiger - Jeans Jacket</span>
+                      <span class="item-price">€ 200</span>
+                      <span class="item-quantity">Quantity: 1</span>
+                    </li>
+                  </ul>
+                </li>
+                <a href="#" class="button">Checkout</a>
+              </ul>
+            </div>
+          </li>
         </ul>
-        <% } %>
       </div>
     </nav>
     <div class="container">
-        <% if(error && error.length > 0){ %>
-          <div class="flash-box alert alert-danger" role="alert">
-            <%=error%>
-          </div>
-        <% } %>
         <% if(success && success.length > 0){ %>
           <div class="flash-box alert alert-success" role="alert">
             <%=success%>

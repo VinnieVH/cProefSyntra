@@ -7,12 +7,16 @@
             <form action="/register" method="POST">
                 <label for="firstName">First name</label>
                 <input id="firstName" type="text" name="firstName">
+                <span class="error-form" id="firstName-error-message"></span>
                 <label for="lastName">Name</label>
                 <input id="lastName" type="text" name="lastName">
+                <span class="error-form" id="lastName-error-message"></span>
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email">
+                <span class="error-form" id="email-error-message"></span>
                 <label for="password">Password</label>
                 <input id="password" type="password" name="password">
+                <span class="error-form" id="password-error-message"></span>
                 <div class="button-group">
                     <button type="submit"class="button">Sign Up</button>
                 </div>
