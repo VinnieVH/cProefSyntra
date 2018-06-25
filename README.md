@@ -43,8 +43,10 @@ WEBSITE TO-DO-LIST:
 * add show route ✓
 * style the show page for products ✓ maybe some more?
 * make cloth sizes an array for product show page ✓
-* add shopping bag in - start over
+* add shopping bag in ✓
 * style shopping bag ✓
+* show shopping bag in dropdown list
+* add extra functionality for shoppingbag
 * add wishlist in
 * add account detail page
 * add account details route

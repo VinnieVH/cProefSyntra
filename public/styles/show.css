@@ -205,7 +205,7 @@ ul {
 
 .shopping-cart-container:after {
     bottom: 100%;
-	left: 85%;
+	left: 82%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -217,6 +217,34 @@ ul {
 	margin-left: -8px;
 }
 
+.wishlist-container {
+    width: 320px;
+    border: solid transparent;
+    border: 1px solid #040405;
+    border-radius: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wishlist-container:after {
+    bottom: 100%;
+	left: 79%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #ede8e8;
+	border-width: 8px;
+	margin-left: -8px;
+
+}
+
 .shopping-total {
     margin-top: 10px;
+}
+
+.validation-error { 
+    border: 1.5px solid red;
 }

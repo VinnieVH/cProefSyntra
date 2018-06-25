@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1> <%= product.brand %> - <%= product.category%></h1>
+            <h1 data-id="<%=product._id%>" data-brand="<%=product.brand%>" data-category="<%=product.category%>" data-price="<%=product.price%>" data-img="<%=product.image%>"> <%= product.brand %> - <%= product.category%></h1>
             <div class="thumbnail">
                 <img class="show-image" src="<%=product.image%>">
             </div>
@@ -22,13 +22,13 @@
                     <ul class="show-dropdown-menu dropdown-menu" aria-labelledby="dropdownMenu1">
                         <% product.sizes.forEach(function(size) { %>
                             <li><a><%= size %></a></li>
-                       <% }) %>
+                       <% }); %>
                     </ul>
                   </div>
             </div>
             <div class="show-options">
-                <a href="/add-to-bag/<%=product._id%>" id="add-to-bag" class="button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
-                <a href="/add-to-bag/<%=product._id%>" id="add-to-wishlist" class="button"><i class="far fa-heart"></i> Add to Wishlist</a>
+                <a href="" onclick="return false;" id="add-to-bag" class="button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
+                <a href="" id="add-to-wishlist" class="button"><i class="far fa-heart"></i> Add to Wishlist</a>
             </div>
         </div>
     </div>

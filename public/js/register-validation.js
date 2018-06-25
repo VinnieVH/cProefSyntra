@@ -31,6 +31,7 @@ $(function() {
         if (firstName_pattern.test($("#firstName").val())) {
             $("#firstName-error-message").hide();
         } else {
+            $('#firstName').addClass('validation-error');
             $("#firstName-error-message").html("Invalid first name.");
             $("#firstName-error-message").show();
             error_firstName = true;
@@ -43,6 +44,7 @@ $(function() {
         if (lastName_pattern.test($("#lastName").val())) {
             $("#lastName-error-message").hide();
         } else {
+            $('#lastName').addClass('validation-error');
             $("#lastName-error-message").html("Invalid last name.");
             $("#lastName-error-message").show();
             error_lastName = true;
@@ -56,6 +58,7 @@ $(function() {
         if(email_pattern.test($("#email").val())) {
             $("#email-error-message").hide();
         } else {
+            $('#email').addClass('validation-error');
             $("#email-error-message").html("Invalid email address.");
             $("#email-error-message").show();
             error_email = true;
@@ -66,6 +69,7 @@ $(function() {
         let password_length = $("#password").val().length;
 
         if (password_length < 5 || password_length > 20) {
+            $('#password').addClass('validation-error');
             $("#password-error-message").html("Password should be between 5-20 characters.");
             $("#password-error-message").show();
             error_password = true;
