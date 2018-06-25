@@ -2,12 +2,12 @@ let bag;
 
 if (localStorage.getItem('bag')) {
     bag = JSON.parse(localStorage.getItem('bag'));
-    localStorage.setItem('bag', JSON.stringify(bag));
 } else {
     let bag = {};
     bag.items = [];
-    localStorage.setItem('bag', JSON.stringify(bag));
 }
+
+localStorage.setItem('bag', JSON.stringify(bag));
 
 $('#add-to-bag').on('click', function (e) {
 
