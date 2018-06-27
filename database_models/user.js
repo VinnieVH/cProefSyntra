@@ -10,21 +10,21 @@ var UserSchema = mongoose.Schema({
     firstName: {
         type: String,
         index: true,
-        required: [true,  'Please enter a first name.']
+        required: true
     },
     lastName: {
         type: String,
-        required: [true, 'Please enter a last name.']
+        required: true
     },
     email: {
         type: String,
-        required: [true, 'Please enter an email address.'],
+        required: true,
         unique: true
     },
     password: {
         type: String,
-        required: [true, 'Please enter a password.'],
-        minLength: [4, 'Your password must be at least 4 characters long.']
+        required: true,
+        minLength: 5
     }
 
 });

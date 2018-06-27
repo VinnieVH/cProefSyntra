@@ -45,6 +45,7 @@ WEBSITE TO-DO-LIST:
 * make cloth sizes an array for product show page ✓
 * add shopping bag in ✓
 * style shopping bag ✓
+* add custom scrollbar ✓
 * show shopping bag in dropdown list
 * add extra functionality for shoppingbag
 * add wishlist in
