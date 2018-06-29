@@ -1,0 +1,36 @@
+<% include ../../partials/header %>
+    <main class="">
+        <div class="container">
+            <h1 id="">Account Details</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                <h2>Account Information</h2>
+                <form action="/login" method="POST">
+                    <label for="email">Email</label>
+                    <input id="email" value="<%=user.email%>"type="text" name="email">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" value="<%=user.firstName%>" type="text" name="firstName">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" value="<%=user.lastName%>" type="text" name="lastName">
+                    <div class="button-group">
+                        <button class="button">Login</button>
+                    </div>
+                </form>
+                </div>
+                <div class="col-sm-6">
+                    <h2>Contact Details</h2>
+                    <form action="/login" method="POST">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="email">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password">
+                        <div class="button-group">
+                            <button class="button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <% include ../../partials/footer %>

@@ -1,9 +1,9 @@
-let bag;
+var bag;
 
 if (localStorage.getItem('bag')) {
     bag = JSON.parse(localStorage.getItem('bag'));
 } else {
-    let bag = {};
+    var bag = {};
     bag.items = [];
 }
 
@@ -18,8 +18,7 @@ $('#add-to-bag').on('click', function (e) {
     item.price = $('h1').attr('data-price');
     item.image = $('h1').attr('data-img');
     console.log(item);
-    localStorage.setItem('bag', bag);
-    console.log(localStorage.getItem('bag'));
+    JSON.stringify(item);
 
     addToCart(item);
 });

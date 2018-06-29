@@ -51,6 +51,11 @@ function(req, res){
      res.redirect("home");
 });
 
+// Show login form
+router.get("/account", function (req, res) {
+    res.render("user/account");
+});
+
 // Logout route
 router.get("/logout", function(req, res) {
    req.logout();

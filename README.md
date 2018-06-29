@@ -49,7 +49,7 @@ WEBSITE TO-DO-LIST:
 * show shopping bag in dropdown list
 * add extra functionality for shoppingbag
 * add wishlist in
-* add account detail page
+* add account detail page - started
 * add account details route
 
 * weed out CSS file in different files - semi
