@@ -3,13 +3,13 @@
 <div class="container">
     <div class="row show-main">
         <div class="col-md-6">
-            <h1 data-id="<%=product._id%>" data-brand="<%=product.brand%>" data-category="<%=product.category%>" data-price="<%=product.price%>" data-img="<%=product.image%>"> <%= product.brand %> - <%= product.category%></h1>
+            <h1> <%= product.brand %> - <%= product.category%></h1>
             <div class="thumbnail">
                 <img class="show-image" src="<%=product.image%>">
             </div>
         </div>
         <div class="col-md-6">
-            <div class="show-details">
+            <div data-id="<%=product._id%>" data-brand="<%=product.brand%>" data-category="<%=product.category%>" data-price="<%=product.price%>" data-img="<%=product.image%>" class="show-details">
                 <img class="show-brand-icon" src="<%=product.brandIcon%>">
                 <h4 id="show-details">Product Details</h4>
                 <hr>
@@ -28,7 +28,7 @@
                   </div>
             </div>
             <div class="show-options">
-                <a href="" onclick="return false;" id="add-to-bag" class="button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
+                <a href="" id="add-to-bag" class="add-to-bag button"><i class="fas fa-shopping-bag"></i> Add to bag</a>
                 <a href="" id="add-to-wishlist" class="button"><i class="far fa-heart"></i> Add to Wishlist</a>
             </div>
         </div>
