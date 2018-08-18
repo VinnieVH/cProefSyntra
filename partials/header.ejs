@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="/styles/show.css">
+    <link rel="stylesheet" href="/styles/search-bar.css">
   </head>
     <nav class="navbar-styling navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -46,17 +47,24 @@
         <ul class="languages nav navbar-nav navbar-left">
           <li class="language-option"><a href="#">NL</a></li>
           <li class="language-option"><a href="#">FR</a></li>
-          <li class="language-option"><a id="english" href="#" selected>ENG</a></li>
+          <li class="language-option"><a id="english" href="#">ENG</a></li>
         </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="searchbox">
+                  <input type="search" placeholder="Search..." name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                  <button type="submit" class="searchbox-submit"><i class="fas fa-search"></i></button>
+                  <span class="searchbox-icon"><i class="fas fa-search"></i></span>
+              </form>
+            </li>
             <% if(!user){ %>
-            <li class="hvr-underline-from-center"><a href="/register">Sign Up</a></li>
-            <li class="hvr-underline-from-center"><a href="/login">Login</a></li>
+            <li class="hvr-underline-from-center"><a href="/register"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+            <li class="hvr-underline-from-center"><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
             <% } %>
             <% if(user) { %>
-            <li class="hvr-underline-from-center"><a href="/account">Signed In As <%= user.firstName%></a></li>
-            <li class="hvr-underline-from-center"><a href="/logout">Logout</a></li>
+            <li class="hvr-underline-from-center"><a href="/account"><i class="fas fa-user"></i> Welcome, <%= user.firstName%></a></li>
+            <li class="hvr-underline-from-center"><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             <% } %>
           </ul>
         </div>

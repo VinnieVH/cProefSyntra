@@ -10,13 +10,13 @@ button {
 }
 
 #wishlist {
-    margin-right: 35px;
+    margin-right: 40px;
     height: 49.55px;
     border: none;
 }
 
 #shoppingbag {
-    margin-right: 0px;
+    margin-right: 30px;
     height: 49.55px;
     border: none;
 }
@@ -27,6 +27,13 @@ button {
 }
 
 /*NAVIGATION BAR - styling the navbar*/
+.nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 .navbar-brand {
     padding: 0;
     float: left;
@@ -158,6 +165,42 @@ li>button.li-a-navbar {
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
     left: 0;
     right: 0;
+}
+
+.fa-user-plus {
+    color: #e58d12;
+    padding-right: 5px;
+    font-size: 15px;
+}
+
+.fa-sign-in-alt {
+    color: #e58d12;
+    padding-right: 5px;
+    padding-left: O;
+    font-size: 15px; 
+}
+
+.fa-user {
+    color: #e58d12;
+    padding-right: 5px;
+    padding-left: O;
+    font-size: 15px; 
+    margin: 0;
+}
+
+.fa-sign-out-alt {
+    color: #e58d12;
+    padding-right: 5px;
+    padding-left: O;
+    font-size: 15px;
+    margin: 0; 
+}
+
+.fa-search {
+    color: #e58d12;
+    padding-right: 0px;
+    font-size: 17px;
+    margin: 0; 
 }
 
 /* shopping bag buttons */

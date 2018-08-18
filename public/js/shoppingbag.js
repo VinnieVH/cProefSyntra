@@ -18,7 +18,6 @@ function loadEventListeners() {
 
     // Document ready
     document.addEventListener('DOMContentLoaded', getFromLocalStorage);
-
 }
 
 // Functions
@@ -137,6 +136,7 @@ function getFromLocalStorage() {
     shoppingBagContent.appendChild(row);
     });
 }
+
 
 
 
